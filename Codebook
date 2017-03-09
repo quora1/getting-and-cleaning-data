@@ -1,0 +1,29 @@
+Codebook:
+
+Prodecure:
+
+1) Opening files and investigating their dimentions
+2)Merging all similar data using rbind() command
+	subjects_test with subjects_train
+	X_test with X_train
+	y_test with y_train
+3)Extracting from the X dataset only observations on means and standard deviations using grep function and regular expression language, assigning features their names from features.txt file as well as activities from file activity_labels.txt
+4) Merging the modified X file with y and subjects, the new dataset has 180 rows (30 subjects*6 activities
+5) Generating new dataset with averages per activity per subject using melt and dcast functions and saving it in a txt format.
+
+
+Datasets 
+
+(corresponding to different stages of the procedure; initial, intermediary and final):
+
+2)--> x_train, x_test (actual measurements), y_train, y_test, (activities) subject_train , 	subject_test (subjects). For dimentions, see comments inside run_analysis.R script
+3)--> X (product of merging x_train and x_test), features.txt file containing description of 	features and file activity_labels.txt with labels of activities.
+4) -->X, y (product of merging y_train, y_test) and subjects (product of merging 	subject_train , subject_test). The 3 datasets are merged into "data" dataset.
+5) -->data.mean is the final dataset with averages per activity and per subject build based on 	"data" dataset.
+
+
+Variables:
+
+Subjects (from 1 to 30) - identfier 1
+Activities (6 activities per subject) - identfier 2
+Features ( 86 - columns corresponding all the different measurements par activity and per 	subject)

@@ -125,14 +125,9 @@ data$activity <-as.factor(data$activity)
 
 data.melted <-melt(data, id=c("subject","activity"))
 data.mean <- dcast(data.melted, subject + activity ~ variable, mean)
-head(data.mean)
 dim(data.mean)
-data.mean<-data.mean[,-3]
-dim(data.mean)
-
 
 save(data.mean,file="data.mean.Rda")
-write.table(data.mean,"mean.data.txt", row.name=FALSE)
 
 
 
